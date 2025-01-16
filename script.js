@@ -23,6 +23,9 @@ function decideWinner() {
   } else if (checkWinner("X")) {
     winMessage.textContent = "Player X wins!";
     showReplayButton();
+  } else if (isBoardFull()) {
+    winMessage.textContent = "DRAW";
+    showReplayButton();
   }
 }
 
@@ -45,6 +48,10 @@ function checkWinner(player) {
   return winPatterns.some((pattern) =>
     pattern.every((index) => boardStatus[index] === player)
   );
+}
+
+function isBoardFull() {
+  return Object.keys(boardStatus).length === 9;
 }
 
 // Function to show the replay button
