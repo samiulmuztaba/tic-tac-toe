@@ -1,0 +1,68 @@
+body {
+  font-family: "Source Code Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #2c3e50; /* Dark background */
+  color: #ecf0f1; /* Light text */
+}
+
+h1 {
+  font-size: 3rem;
+  color: #ecf0f1;
+  margin-bottom: 30px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #34495e; /* Slightly lighter than body for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #2980b9; /* Blue border for separation */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 3D effect */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cell:hover {
+  background-color: #1abc9c; /* Light teal for hover */
+  transform: scale(1.05); /* Slight scale up effect */
+}
+
+.cell.O {
+  color: #3498db; /* Blue color for O */
+}
+
+.cell.X {
+  color: #e74c3c; /* Red color for X */
+}
+
+.replay {
+  display: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #2ecc71; /* Green button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.replay:hover {
+  background-color: #27ae60; /* Darker green for hover */
+}
